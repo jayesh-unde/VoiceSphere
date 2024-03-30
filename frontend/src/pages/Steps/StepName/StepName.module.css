@@ -1,0 +1,14 @@
+.paragraph{
+    width: 70%;
+    text-align: center;
+    margin: 20px auto;
+}
+.cardWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+.actionButtonWrap{
+    margin-top: 30px;
+}
