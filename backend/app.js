@@ -11,7 +11,7 @@ const server = require('http').createServer(app);
 
 const io = require('socket.io')(server,{
     cors:{
-        origin:'http://localhost:3000',
+        origin:process.env.REACT_APP_API_URL,
         methods: ['GET','POST'],
     },
 })
@@ -23,13 +23,13 @@ then(()=>{
 .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/VoiceSphere');
+  await mongoose.connect(process.env.DB_URL);
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 const corsOption = {
     credentials:true,
-    origin:['http://localhost:3000'],
+    origin:[process.env.REACT_APP_API_URL],
 };
 app.use(cors(corsOption));
 app.use(cookieParser());
