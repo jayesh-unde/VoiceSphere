@@ -119,7 +119,7 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For support or inquiries, please contact [your-email@example.com].
+For support or inquiries, please contact [jayeshunde2002@gmail.com].
 
 ## Additional Information
 
