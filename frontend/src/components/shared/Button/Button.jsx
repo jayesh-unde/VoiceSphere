@@ -5,7 +5,7 @@ const Button = ({text,logo,onClick})=>{
     return(
         <button onClick={onClick} className={styles.button}>
             <span>{text}</span>
-            <img className={styles.arrow} src={logo} alt="arrow" />
+            <img className={styles.arrow} src={logo} alt="" />
         </button>
     )
 }

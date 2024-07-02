@@ -14,10 +14,11 @@ import {useDispatch} from "react-redux";
 const StepOtp = ()=>{
     const [otp,setOtp] = useState('');
     const dispatch = useDispatch(); // used to dispatch or store value in redux
-    const {phone,hash} = useSelector((state)=> state.auth.otp) // used the redux store value using state
+    const {email,hash,password} = useSelector((state)=> state.auth.otp) // used the redux store value using state
     async function submit(){
+        if(!otp || !hash) return;
         try{
-            const {data} = await verifyOtp({otp,phone,hash});
+            const {data} = await verifyOtp({otp,email,hash,password});
             dispatch(setAuth(data));
             console.log(data);
         }catch(err){

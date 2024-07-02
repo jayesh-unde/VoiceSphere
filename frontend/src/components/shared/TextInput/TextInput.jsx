@@ -4,7 +4,11 @@ import styles from './TextInput.module.css';
 const TextInput = (props)=>{
     return(
         <div>
-            <input className={styles.input} type="text" {...props} />
+            <input 
+            style={{
+                width:props.fullwidth === 'true' ? '100%': 'inherit',
+            }}
+            className={styles.input} type={props.type || 'text'} {...props} />
         </div>
     )
 }

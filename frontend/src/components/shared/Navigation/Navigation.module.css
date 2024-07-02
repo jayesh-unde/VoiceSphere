@@ -1,3 +1,23 @@
 .navbar{
     padding: 20px 0;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logOutButton{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.navRight{
+    display: flex;
+    align-items: center;
+}
+.avatar{
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0077ff;
+    margin: 0 20px;
+    margin-right: 10px;
 }
