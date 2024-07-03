@@ -29,7 +29,7 @@ async function main() {
 }
 const corsOption = {
     credentials:true,
-    origin:[process.env.REACT_APP_API_URL],
+    origin:process.env.REACT_APP_API_URL,
 };
 app.use(cors(corsOption));
 app.use(cookieParser());
