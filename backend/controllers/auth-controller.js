@@ -102,11 +102,15 @@ class AuthController {
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Only set secure flag in production
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax' // Adjust sameSite policy
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Only set secure flag in production
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax' // Adjust sameSite policy
         });
 
         const userdto = new Userdto(user);
