@@ -2,6 +2,7 @@ const tokenService = require("../services/token-service");
 
 module.exports = async function(req,res,next){
     try{
+        console.log("champion");
         const {accessToken} = req.cookies; // install cookie-parser 
         if(!accessToken){
             throw new Error();
