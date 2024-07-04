@@ -102,15 +102,19 @@ class AuthController {
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Only set secure flag in production
-            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax' // Adjust sameSite policy
+            secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        sameSite: 'None' // Allow cross-site cookies
+
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Only set secure flag in production
-            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax' // Adjust sameSite policy
+            secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        sameSite: 'None' // Allow cross-site cookies
+
         });
 
         const userdto = new Userdto(user);
@@ -156,11 +160,19 @@ class AuthController {
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        sameSite: 'None' // Allow cross-site cookies
+
         });
 
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        sameSite: 'None' // Allow cross-site cookies
+
         });
 
         const userdto = new Userdto(user);
@@ -210,11 +222,19 @@ class AuthController {
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        sameSite: 'None' // Allow cross-site cookies
+
         });
     
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        sameSite: 'None' // Allow cross-site cookies
+
         });
     
         const userDto = new Userdto(user);
