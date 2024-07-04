@@ -7,7 +7,7 @@ const socketInit = () => {
         timeout: 10000,
         transports: ['websocket'],
     };
-    return io('http://localhost:5500', options);
+    return io('https://voicesphere.onrender.com', options);
 };
 
 export default socketInit;
