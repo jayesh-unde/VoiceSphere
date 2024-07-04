@@ -103,7 +103,7 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
-        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        domain: 'voicesphere.onrender.com', // Frontend domain
         sameSite: 'None' // Allow cross-site cookies
 
         });
@@ -112,7 +112,7 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
-        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        domain: 'voicesphere.onrender.com', // Frontend domain
         sameSite: 'None' // Allow cross-site cookies
 
         });
@@ -161,7 +161,7 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
-        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        domain: 'voicesphere.onrender.com', // Frontend domain
         sameSite: 'None' // Allow cross-site cookies
 
         });
@@ -170,7 +170,7 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
-        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        domain: 'voicesphere.onrender.com', // Frontend domain
         sameSite: 'None' // Allow cross-site cookies
 
         });
@@ -223,7 +223,7 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
-        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        domain: 'voicesphere.onrender.com', // Frontend domain
         sameSite: 'None' // Allow cross-site cookies
 
         });
@@ -232,7 +232,7 @@ class AuthController {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
-        domain: 'voicesphere-1.onrender.com', // Frontend domain
+        domain: 'voicesphere.onrender.com', // Frontend domain
         sameSite: 'None' // Allow cross-site cookies
 
         });
