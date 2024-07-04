@@ -8,6 +8,7 @@ module.exports = async function(req,res,next){
         }
         console.log(accessToken);
         const userData = await tokenService.verifyAccessToken(accessToken); 
+        console.log(userData);
         if(!userData){
             throw new Error();
         }
