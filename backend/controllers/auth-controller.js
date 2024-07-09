@@ -4,6 +4,15 @@ const userService = require('../services/user-service');
 const tokenService = require('../services/token-service');
 const Userdto = require('../dtos/user-dtos');
 
+function generateRandomPassword(length) {
+    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let password = '';
+    for (let i = 0; i < length; i++) {
+        password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return password;
+}
+
 class AuthController {
     async sendOtp(req, res) {
         const { phone } = req.body;
