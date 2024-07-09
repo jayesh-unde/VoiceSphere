@@ -18,4 +18,6 @@ router.post('/api/profile',authController.findUserData);
 router.post('/api/send-otp-email',authController.sendOtpEmail);
 router.post('/api/login-email',authController.loginEmail);
 router.post('/api/leave-room',authMiddlewares,roomsController.leaveRoom);
+router.post('/api/google-login', authController.googleLogin)
+
 module.exports = router;
