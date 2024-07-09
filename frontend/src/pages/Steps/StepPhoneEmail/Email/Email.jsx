@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from "react-redux";
 import { setOtp,setAuth } from "../../../../store/authSlice";
-import { loginEmail } from "../../../../http/index";
+import { loginEmail,googleLogin } from "../../../../http/index";
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 const Email = ({onNext})=>{
