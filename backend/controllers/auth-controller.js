@@ -3,6 +3,9 @@ const hashService = require('../services/hash-service');
 const userService = require('../services/user-service');
 const tokenService = require('../services/token-service');
 const Userdto = require('../dtos/user-dtos');
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client('666111852320-5sj0b6062nugsnud81uqd2eglomlri15.apps.googleusercontent.com');
+
 
 function generateRandomPassword(length) {
     const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
