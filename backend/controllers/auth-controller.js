@@ -241,7 +241,72 @@ class AuthController {
         res.json({ user: userDto, auth: true });
     }
     
+    async googleLogin(req, res) {
+        const { token } = req.body;
+        try {
+            const ticket = await client.verifyIdToken({
+                idToken: token,
+                audience: '666111852320-5sj0b6062nugsnud81uqd2eglomlri15.apps.googleusercontent.com',
+            });
+            const payload = ticket.getPayload();
+            const { sub, email, name } = payload;
 
+            let user = await userService.findUser({ email });
+
+            if (!user) {
+                const randomPassword = generateRandomPassword(20);
+                user = await userService.createUser({ googleId: sub, email, name, password: randomPassword });
+                const { accessToken, refreshToken } = tokenService.generateTokens({ _id: user._id });
+
+                await tokenService.storeRefreshToken(refreshToken, user._id);
+
+                res.cookie('refreshToken', refreshToken, {
+                    maxAge: 1000 * 60 * 60 * 24 * 30,
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere.onrender.com', // Frontend domain
+        sameSite: 'None'
+                });
+
+                res.cookie('accessToken', accessToken, {
+                    maxAge: 1000 * 60 * 60 * 24 * 30,
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere.onrender.com', // Frontend domain
+        sameSite: 'None'
+                });
+
+                const userDto = new Userdto(user);
+                return res.status(201).json({ user: userDto, auth: true, message: 'User created and logged in' });
+            } else {
+                const { accessToken, refreshToken } = tokenService.generateTokens({ _id: user._id });
+
+                await tokenService.storeRefreshToken(refreshToken, user._id);
+
+                res.cookie('refreshToken', refreshToken, {
+                    maxAge: 1000 * 60 * 60 * 24 * 30,
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere.onrender.com', // Frontend domain
+        sameSite: 'None'
+                });
+
+                res.cookie('accessToken', accessToken, {
+                    maxAge: 1000 * 60 * 60 * 24 * 30,
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        domain: 'voicesphere.onrender.com', // Frontend domain
+        sameSite: 'None'
+                });
+
+                const userDto = new Userdto(user);
+                return res.status(200).json({ user: userDto, auth: true, message: 'User logged in' });
+            }
+        } catch (error) {
+            console.error('Google login failed:', error);
+            res.status(401).json({ message: 'Google login failed' });
+        }
+    }
     // logout 
 
     async logout(req,res){
