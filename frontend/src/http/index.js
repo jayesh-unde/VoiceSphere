@@ -28,6 +28,7 @@ export const findUser = (data)=> api.post('/api/find-user',data);
 export const sendOtpEmail = (data)=>api.post('/api/send-otp-email',data);
 export const loginEmail = (data)=>api.post('/api/login-email',data);
 export const leaveRoom = (data)=>api.post('/api/leave-room',data);
+export const googleLogin = (data) => api.post('/api/google-login', data);
 // Interceptors 
 api.interceptors.response.use(
     (config)=>
