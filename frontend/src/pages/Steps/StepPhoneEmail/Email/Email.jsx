@@ -10,11 +10,21 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from "react-redux";
 import { setOtp,setAuth } from "../../../../store/authSlice";
 import { loginEmail } from "../../../../http/index";
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 const Email = ({onNext})=>{
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const dispatch = useDispatch();
+    const responseGoogle = async (response) => {
+        try {
+            const { data } = await googleLogin({ token: response.credential });
+            dispatch(setAuth(data));
+        } catch (error) {
+            toast.error('Google login failed why');
+        }
+    };
+
     async function submit(){
         // server request
        
@@ -68,6 +78,16 @@ const Email = ({onNext})=>{
             <p className={styles.bottomPara}>
                 By entering your number, you agree to our terms and conditions.Thanks!
             </p>
+                 <GoogleOAuthProvider clientId="666111852320-5sj0b6062nugsnud81uqd2eglomlri15.apps.googleusercontent.com">
+                        <GoogleLogin
+                            onSuccess={responseGoogle}
+                            onError={() => {
+                                toast.error('Google login failed');
+                            }}
+                            theme="outline"
+                            text="Continue with Google"
+                        />
+                    </GoogleOAuthProvider>
             </div>
             
          </Card>
