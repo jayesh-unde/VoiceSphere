@@ -36,7 +36,7 @@ app.use(cookieParser());
 const PORT = process.env.PORT || 5500;
 app.use(express.json({ limit: '8mb' })); // size of file
 app.use(router);
-app.use('/storage', express.static('storage'));
+app.use('/storage', express.static(path.join(__dirname, 'storage')));
 
 
 
