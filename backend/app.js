@@ -8,7 +8,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const ACTIONS = require('./actions');
 const server = require('http').createServer(app);
-
+const path = require('path');
 const io = require('socket.io')(server,{
     cors:{
         origin:process.env.REACT_APP_API_URL,
