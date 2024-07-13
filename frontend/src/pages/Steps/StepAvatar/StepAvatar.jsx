@@ -31,10 +31,10 @@ const StepAvatar = ({onNext})=>{
     }
     async function submit(){
 
-        if(!name || !avatar) return;
+        if(!name) return;
         
         try{
-            const {data} = await activate({name,avatar})
+            const {data} = await activate({name})
             if(data.auth){
                 
                     dispatch(setAuth(data));
