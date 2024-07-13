@@ -36,7 +36,8 @@ class ActivateController{
             }
             user.activated = true;
             user.name = name;
-            user.avatar=`/storage/${imagePath}`;
+            const backendBaseUrl = process.env.BASE_URL;
+            user.avatar = `${backendBaseUrl}/storage/${imagePath}`;
             user.save();
             res.json({ user: new UserDto(user), auth: true });
         } catch (err) {
