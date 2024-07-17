@@ -2,6 +2,10 @@
 
 VoiceSphere is a live streaming audio podcast platform designed for seamless and high-quality voice communication. It offers two modes: Public and Social. In Public mode, anyone can join the stream, and it appears on the homepage along with the discussion topic. In Social mode, the stream is private, and only users with the link can join, similar to Google Meet.
 
+## Live Demo
+
+You can view the live demo of the project [here](https://voicesphere-1.onrender.com).
+
 ## Features
 
 - **Live Streaming Audio:** High-quality voice communication using WebRTC.
