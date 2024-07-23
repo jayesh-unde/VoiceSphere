@@ -1,22 +1,16 @@
-.userHead{
-    background: pink;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
+.container {
+    position: relative;
+    height: 50vh;
 }
-.userAvatar{
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    
-}
-.goBack{
+
+.goBack {
     display: flex;
     align-items: center;
     background: #121212;
     border: none;
-    margin-top:2rem;
+    margin-top: 2rem;
 }
+
 .goBack span {
     margin-left: 1rem;
     font-weight: bold;
@@ -41,7 +35,7 @@
     margin-top: 4rem;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    min-height: calc(100vh - 205px);
+    max-height: calc(100vh - 205px);
     padding: 2rem;
 }
 
@@ -53,11 +47,13 @@
 .clientsList {
     margin-top: 2rem;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap:3rem;
 }
-
+.actions{
+    display: flex;
+    margin-bottom: 1rem;
+}
 .actionBtn {
     background: #262626;
     outline: none;
@@ -87,21 +83,18 @@
     justify-content: space-between;
 }
 
-.client h4{
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-.actions {
-    display: flex;
-    align-items: center;
-}
 .userHead {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: 2px solid #5453e0;
     position: relative;
+}
+
+.userAvatar {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
 }
 
 .micBtn {
@@ -117,3 +110,231 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
 }
+
+.mainContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 290px); /* Adjust height as needed */
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #121212;;
+    overflow: hidden; /* Ensures messages don't overflow outside container */
+}
+
+.chatBox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto; /* Allows scrolling when messages exceed container height */
+    box-sizing: border-box;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between messages */
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    background: #1d1d1d;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0;
+    max-width: 80%;
+    word-wrap: break-word; /* Prevents text from overflowing */
+}
+
+.message strong {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #fff;
+}
+
+.inputBox {
+    display: flex;
+    align-items: center;
+    background-color: #1d1d1d;
+}
+
+.input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #1d1d1d;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.sendBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sendBtn:hover {
+    background-color: #0056b3;
+}
+.chatContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #121212;
+    overflow: hidden;
+    position: relative;
+    
+  }
+  
+  .chatBox {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .messages {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    gap: 5px;
+  }
+  
+  .message {
+    display: flex;
+    flex-direction: column;
+    background: #1d1d1d;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0;
+    max-width: 80%;
+    word-wrap: break-word;
+  }
+  
+  .messageUser {
+    background-color: #007bff; /* User's message color */
+  }
+  
+  .messageOther {
+    background-color: #333333; /* Other users' message color */
+  }
+  
+  .message strong {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #fff;
+  }
+  
+  .inputBox {
+    display: flex;
+    align-items: center;
+    padding-right: 27px;
+    padding-top: 12px;
+    padding-left: 10px;
+    padding-bottom: 13px;
+    background-color: #1d1d1d;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #1d1d1d;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: #262626;
+    color: white;
+  }
+  
+  .sendBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .sendBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styles for clients list */
+  
+  
+  .userHead {
+    margin-bottom: 1rem; /* Add margin at the bottom for wrapping */
+  }
+  
+  /* Ensure the goBack button stays at the top */
+  .container {
+    position: relative;
+    height: 50vh;
+  }
+  .messageUser {
+    background-color: #262626; /* User's message color */
+    align-self: flex-end; /* Align user's messages to the right */
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0;
+    max-width: 80%;
+    min-width: 10%;
+    word-wrap: break-word;
+}
+
+.messageOther {
+    background-color: #333333; /* Other users' message color */
+    align-self: flex-start; /* Align other users' messages to the left */
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0;
+    min-width: 10%;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+.user{
+    display: flex;
+    font-size: xx-small;
+}
+.chatBox::-webkit-scrollbar {
+    width: 0px; /* Adjust width as needed */
+  }
+  
+  /* Handle */
+  .chatBox::-webkit-scrollbar-thumb {
+    background: #007bff; /* Change to your desired color */
+    border-radius: 4px; /* Optional: to round corners */
+  }
+  
+  /* Handle on hover */
+  .chatBox::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Change to your desired hover color */
+  }
+  
+  /* Track (Progress Bar) */
+  .chatBox::-webkit-scrollbar-track {
+    background: #121212; /* Change to match your background color */
+  }
