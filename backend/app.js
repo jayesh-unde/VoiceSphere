@@ -118,6 +118,16 @@ io.on('connection',(socket)=>{
             }
         });
     });
+
+    socket.on('sendMessage', ({ roomId, message,user }) => {
+        console.log(message);
+        console.log(roomId);
+        socket.broadcast.emit('receiveMessage', {
+            message,
+            user: user.name || 'Anonymous',
+        });
+       
+    });
     // remove peer
     const leaveRoom = ({roomId})=>{
         const {rooms} = socket;
