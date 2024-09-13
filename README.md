@@ -117,9 +117,6 @@ We welcome contributions from the community. Please follow these steps:
 3. Commit your changes and push the branch to your fork.
 4. Open a pull request with a detailed description of your changes.
 
-## License
-
-This project is licensed under the MIT License.
 
 ## Contact
 
